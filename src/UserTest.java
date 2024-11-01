@@ -87,5 +87,6 @@ public class UserTest {
 
         User newUser = new User("newUser", "Password2");
         assertNotEquals(user, newUser); // Test for different users
+
     }
 }
