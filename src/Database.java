@@ -16,19 +16,29 @@ public class Database implements DatabaseInterface {
         this.posts = new ArrayList<Post>();
     }
 
-    public void addUser(User user, String userOutput) {
+    public void addUser(User user) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(userOutput, true))) {
+            writer.write(user.toString());
+            writer.newLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void removeUser(User user) {
         
     }
 
-    public void removeUser(User user, String userOutput) {
-        
+    public void addPost(Post post) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(postOutput, true))) {
+            writer.write(post.toString());
+            writer.newLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void addPost(Post post, String postOutput) {
+    public void removePost(Post post) {
         
-    }
-
-    public void removePost(Post post, String postOutput) {
-
     }
 }
