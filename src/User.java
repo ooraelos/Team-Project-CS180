@@ -137,6 +137,7 @@ public class User implements UserInterface {
         if (!blocklist.contains(user)) {
             blocklist.add(user);
             friends.remove(user);
+
         }
     }
 }
