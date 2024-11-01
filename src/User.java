@@ -98,7 +98,7 @@ public class User implements UserInterface {
 
     @Override
     public String toString() {
-        return "User Profile: " + userName + "\nFriends: " + friends.size() + "\nBlocked Users: " + blocklist.size();
+        return String.format("%s,%s;%s", userId, password, friends.toString());
     }
 
     //let me know if you want the valid password to be more specific but for now it's just checking for an uppercase letter
